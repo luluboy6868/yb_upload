@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediRegist", "MediRegist\MediRegist.csproj", "{3AC77AA3-E891-4248-8289-B60D37229CDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AC77AA3-E891-4248-8289-B60D37229CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC77AA3-E891-4248-8289-B60D37229CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC77AA3-E891-4248-8289-B60D37229CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC77AA3-E891-4248-8289-B60D37229CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C26F210D-4717-455A-921D-B0978E2F6499}
+	EndGlobalSection
+EndGlobal
