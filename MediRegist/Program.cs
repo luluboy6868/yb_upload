@@ -25,9 +25,7 @@ namespace MediRegist
             XtraForm1 frmLogin = new XtraForm1();
             if (frmLogin.ShowDialog() == DialogResult.OK)
             {
-
-                new Form1().Show();
-                Application.Run();
+                Application.Run(new F_main());
             }
         }
     }

@@ -1,0 +1,4223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SF_Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDiagnosis" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SF_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SF_TestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArcCancleUpdateStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patient_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="visit_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArcCancleUpdateStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OutpatToInPat">
+        <s:complexType />
+      </s:element>
+      <s:element name="OutpatToInPatResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QYYYGETINFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QYYYGETINFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QYYYGETINFOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInp_No">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateInp_NoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnitePatientID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientIdOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientIdNew" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IVisitIDOld" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitePatientIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnitePaitentMrFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientIdOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientIdNew" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IVisitIDOld" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitePaitentMrFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitePaitentMrFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisCostNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisCostNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetHisCostNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmrGetHisCostResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SFGETINFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SFGETINFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SFGETINFOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetPatientID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetPatientIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetPatientIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToHisOutPatInfoBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatient_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="strVisit_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToHisOutPatInfoBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetToHisOutPatInfoBookResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Copy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMrPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CopyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CopyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_fileToLocal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="host_addr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="local_file" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="option" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_fileToLocalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_fileToLocalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DTGETINFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DTGETINFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DTGETINFOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetCpInfoDataSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetCpInfoDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetCpInfoDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YYGETINFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YYGETINFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YYGETINFOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CisGetOutPatientInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CisGetOutPatientInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CisGetOutPatientInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrOldOrders">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrOldOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrOldOrdersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="genMrPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="genMrPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genMrPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMrSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMrSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMrSummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetICUmessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetICUmessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetICUmessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrAccountValidate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUSERPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWKStation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrAccountValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrAccountValidateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroDict">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroDictResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroZrys">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroZrysResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroBedDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDeptCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroBedDictResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetNurseBloodBypatient1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetNurseBloodBypatient1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetNurseBloodBypatient1Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamReportNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patientid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamReportNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetExamReportNewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetNurseBloodBypatient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="datTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetNurseBloodBypatientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetNurseBloodBypatientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetEvaluateBloodBypatient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetEvaluateBloodBypatientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetEvaluateBloodBypatientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroUsers">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroUsersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroOperationCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroOperationCodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroICDCode">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroICDCodeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroDeptDict">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroDeptDictResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroPatFor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Dept" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroPatForResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDeptUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDeptCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIncludeCurUser" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroNewPat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroNewPatResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroOnePat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strInpNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMrDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRDoctor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroOnePatResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroOnePatTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strInpNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMrDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRDoctor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroOnePatTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrSynchroOnePatTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroNewPatMZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrentDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroNewPatMZResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroOutPat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroOutPatResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrBackup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nFlag" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrBackupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateErrorTopicid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateErrorTopicidResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetOrderTypeDict">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetOrderTypeDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetOrderTypeDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetOrderItemDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderTypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetOrderItemDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetOrderItemDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetOrderDataSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetOrderDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetOrderDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroPatOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroPatOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetOrderDataSetByPatentID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetOrderDataSetByPatentIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetOrderDataSetByPatentIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetLabDataSetByPatentID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetLabDataSetByPatentIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetLabDataSetByPatentIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetLabReportDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTestNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetLabReportDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetLabReportDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetLabItemResultQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strReportItem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetLabItemResultQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetLabItemResultQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetExamMasterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamAppoint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intVisitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamAppointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetExamAppointResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroExamAppoint">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroExamAppointResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetExamReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strExamNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetExamReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetExamReportResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroDeptPatOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroDeptPatOrderResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroAppGrants">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroAppGrantsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroPatMedicalCostById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSynchroPatMedicalCostByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroLis">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroLisResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSychroAdtLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSychroAdtLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateEmrReportBedDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmrReportBedDateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetHisQNRYRS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQNRYRSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmrGetHisQNRYRSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQNCYRS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQNCYRSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmrGetHisQNCYRSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQWYYRS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQWYYRSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmrGetHisQWYYRSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQMSYRS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nDeptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHisQMSYRSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmrGetHisQMSYRSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetPatDischargeDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetPatDischargeDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetPatDischargeDateTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmrReportBedDateICU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmrReportBedDateICUResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroDischargeDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrSynchroDischargeDateTimeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetEncodingPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUSERPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetEncodingPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetEncodingPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrToHis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrToHisResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="XinXiDaoRuHis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="starttime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endtime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XinXiDaoRuHisResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EmrGetGeneralSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetGeneralSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetGeneralSQLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Getdataset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetdatasetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetdatasetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGenralDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EmrGenralDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGenralDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetTransferInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patient_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="visit_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="trans_numbers" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetTransferInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetTransferInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AAAEmrGenralStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="a" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="b" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="c" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AAAEmrGenralStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AAAEmrGenralStrResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGenralStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="list" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGenralStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGenralStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetMonitorCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patient_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="visit_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetMonitorCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetMonitorCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetAutoDis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="patient_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="visit_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetAutoDisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetAutoDisResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSetHisEncodingPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUSERPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSetHisEncodingPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrSetHisEncodingPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHISCosts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrGetHISCostsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrGetHISCostsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSychroBasicPatInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrSychroBasicPatInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrSychroBasicPatInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrFollowup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sPatId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sVisitId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrFollowupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrFollowupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HISGETINFO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HISGETINFOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HISGETINFOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDBDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DBType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cmdtxt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDBDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDBDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcuteDBSql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DBType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cmdtxt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcuteDBSqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExcuteDBSqlResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrJHEMRGetEmrWebViewPara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLoginPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPatID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmrFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmrJHEMRGetEmrWebViewParaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmrJHEMRGetEmrWebViewParaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOpResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgetest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dtCurrent" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtBirth" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgetestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgetestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgeByBirthday">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="birthday" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="now" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgeByBirthdayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgeByBirthdayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperatingMrStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flag" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperatingMrStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperatingMrStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPATMrStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPATMrStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPATMrStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperatingMrStatus_new">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOpType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperatingMrStatus_newResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOperatingMrStatus_newResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Gethuiqiaoshuxue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatientId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVisitId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GethuiqiaoshuxueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GethuiqiaoshuxueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EMROrigFileList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visit_flag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patient_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="visit_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EMROrigFileListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EMROrigFileListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArcRlvAppAuditResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArcRlvAppAuditResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArcRlvAppAuditResultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="C_Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPatID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVisitID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="C_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="C_TestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SF_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:SF_Test" />
+  </wsdl:message>
+  <wsdl:message name="SF_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:SF_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ArcCancleUpdateStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ArcCancleUpdateStatus" />
+  </wsdl:message>
+  <wsdl:message name="ArcCancleUpdateStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ArcCancleUpdateStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="OutpatToInPatSoapIn">
+    <wsdl:part name="parameters" element="tns:OutpatToInPat" />
+  </wsdl:message>
+  <wsdl:message name="OutpatToInPatSoapOut">
+    <wsdl:part name="parameters" element="tns:OutpatToInPatResponse" />
+  </wsdl:message>
+  <wsdl:message name="QYYYGETINFOSoapIn">
+    <wsdl:part name="parameters" element="tns:QYYYGETINFO" />
+  </wsdl:message>
+  <wsdl:message name="QYYYGETINFOSoapOut">
+    <wsdl:part name="parameters" element="tns:QYYYGETINFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInp_NoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInp_No" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInp_NoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInp_NoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitePatientIDSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitePatientID" />
+  </wsdl:message>
+  <wsdl:message name="UnitePatientIDSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitePatientIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitePaitentMrFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitePaitentMrFile" />
+  </wsdl:message>
+  <wsdl:message name="UnitePaitentMrFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitePaitentMrFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisCostNewSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHisCostNew" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisCostNewSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHisCostNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisCostSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHisCost" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisCostSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHisCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="SFGETINFOSoapIn">
+    <wsdl:part name="parameters" element="tns:SFGETINFO" />
+  </wsdl:message>
+  <wsdl:message name="SFGETINFOSoapOut">
+    <wsdl:part name="parameters" element="tns:SFGETINFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetPatientIDSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetPatientID" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetPatientIDSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetPatientIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetToHisOutPatInfoBookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToHisOutPatInfoBook" />
+  </wsdl:message>
+  <wsdl:message name="GetToHisOutPatInfoBookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetToHisOutPatInfoBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CopySoapIn">
+    <wsdl:part name="parameters" element="tns:Copy" />
+  </wsdl:message>
+  <wsdl:message name="CopySoapOut">
+    <wsdl:part name="parameters" element="tns:CopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_fileToLocalSoapIn">
+    <wsdl:part name="parameters" element="tns:get_fileToLocal" />
+  </wsdl:message>
+  <wsdl:message name="get_fileToLocalSoapOut">
+    <wsdl:part name="parameters" element="tns:get_fileToLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="DTGETINFOSoapIn">
+    <wsdl:part name="parameters" element="tns:DTGETINFO" />
+  </wsdl:message>
+  <wsdl:message name="DTGETINFOSoapOut">
+    <wsdl:part name="parameters" element="tns:DTGETINFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetCpInfoDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetCpInfoDataSet" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetCpInfoDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetCpInfoDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="YYGETINFOSoapIn">
+    <wsdl:part name="parameters" element="tns:YYGETINFO" />
+  </wsdl:message>
+  <wsdl:message name="YYGETINFOSoapOut">
+    <wsdl:part name="parameters" element="tns:YYGETINFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="CisGetOutPatientInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CisGetOutPatientInfo" />
+  </wsdl:message>
+  <wsdl:message name="CisGetOutPatientInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CisGetOutPatientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrOldOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrOldOrders" />
+  </wsdl:message>
+  <wsdl:message name="EmrOldOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrOldOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="genMrPathSoapIn">
+    <wsdl:part name="parameters" element="tns:genMrPath" />
+  </wsdl:message>
+  <wsdl:message name="genMrPathSoapOut">
+    <wsdl:part name="parameters" element="tns:genMrPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMrSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetMrSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetMrSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetMrSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetICUmessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetICUmessage" />
+  </wsdl:message>
+  <wsdl:message name="GetICUmessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetICUmessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrAccountValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrAccountValidate" />
+  </wsdl:message>
+  <wsdl:message name="EmrAccountValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrAccountValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDictSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDict" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDictSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroZrysSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroZrys" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroZrysSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroZrysResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroBedDictSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroBedDict" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroBedDictSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroBedDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetNurseBloodBypatient1SoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetNurseBloodBypatient1" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetNurseBloodBypatient1SoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetNurseBloodBypatient1Response" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamReportNewSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetExamReportNew" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamReportNewSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetExamReportNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetNurseBloodBypatientSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetNurseBloodBypatient" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetNurseBloodBypatientSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetNurseBloodBypatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetEvaluateBloodBypatientSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetEvaluateBloodBypatient" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetEvaluateBloodBypatientSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetEvaluateBloodBypatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroUsers" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOperationCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOperationCode" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOperationCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOperationCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroICDCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroICDCode" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroICDCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroICDCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDeptDictSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDeptDict" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDeptDictSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDeptDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroPatForSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroPatFor" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroPatForSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroPatForResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeptUser" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroNewPatSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroNewPat" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroNewPatSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroNewPatResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOnePatSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOnePat" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOnePatSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOnePatResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOnePatTestSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOnePatTest" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOnePatTestSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOnePatTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroNewPatMZSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroNewPatMZ" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroNewPatMZSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroNewPatMZResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOutPatSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOutPat" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroOutPatSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroOutPatResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrBackupSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrBackup" />
+  </wsdl:message>
+  <wsdl:message name="EmrBackupSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateErrorTopicidSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateErrorTopicid" />
+  </wsdl:message>
+  <wsdl:message name="UpdateErrorTopicidSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateErrorTopicidResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderTypeDictSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderTypeDict" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderTypeDictSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderTypeDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderItemDictSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderItemDict" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderItemDictSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderItemDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderDataSet" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroPatOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroPatOrder" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroPatOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroPatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderDataSetByPatentIDSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderDataSetByPatentID" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetOrderDataSetByPatentIDSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetOrderDataSetByPatentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetLabDataSetByPatentIDSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetLabDataSetByPatentID" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetLabDataSetByPatentIDSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetLabDataSetByPatentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetLabReportDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetLabReportDataSet" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetLabReportDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetLabReportDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetLabItemResultQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetLabItemResultQuery" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetLabItemResultQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetLabItemResultQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetExamMaster" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetExamMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamAppointSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetExamAppoint" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamAppointSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetExamAppointResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroExamAppointSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroExamAppoint" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroExamAppointSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroExamAppointResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamReportSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetExamReport" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetExamReportSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetExamReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDeptPatOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDeptPatOrder" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDeptPatOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDeptPatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroAppGrantsSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroAppGrants" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroAppGrantsSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroAppGrantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroPatMedicalCostByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroPatMedicalCostById" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroPatMedicalCostByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroPatMedicalCostByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroLisSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroLis" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroLisSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroLisResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSychroAdtLogSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSychroAdtLog" />
+  </wsdl:message>
+  <wsdl:message name="EmrSychroAdtLogSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSychroAdtLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmrReportBedDateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmrReportBedDate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmrReportBedDateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmrReportBedDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQNRYRSSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQNRYRS" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQNRYRSSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQNRYRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQNCYRSSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQNCYRS" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQNCYRSSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQNCYRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQWYYRSSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQWYYRS" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQWYYRSSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQWYYRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQMSYRSSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQMSYRS" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHisQMSYRSSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHisQMSYRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetPatDischargeDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetPatDischargeDateTime" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetPatDischargeDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetPatDischargeDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmrReportBedDateICUSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmrReportBedDateICU" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmrReportBedDateICUSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmrReportBedDateICUResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDischargeDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDischargeDateTime" />
+  </wsdl:message>
+  <wsdl:message name="EmrSynchroDischargeDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSynchroDischargeDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetEncodingPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetEncodingPassword" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetEncodingPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetEncodingPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrToHisSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrToHis" />
+  </wsdl:message>
+  <wsdl:message name="EmrToHisSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrToHisResponse" />
+  </wsdl:message>
+  <wsdl:message name="XinXiDaoRuHisSoapIn">
+    <wsdl:part name="parameters" element="tns:XinXiDaoRuHis" />
+  </wsdl:message>
+  <wsdl:message name="XinXiDaoRuHisSoapOut">
+    <wsdl:part name="parameters" element="tns:XinXiDaoRuHisResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetGeneralSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetGeneralSQL" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetGeneralSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetGeneralSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetdatasetSoapIn">
+    <wsdl:part name="parameters" element="tns:Getdataset" />
+  </wsdl:message>
+  <wsdl:message name="GetdatasetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetdatasetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGenralDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGenralDataSet" />
+  </wsdl:message>
+  <wsdl:message name="EmrGenralDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGenralDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetTransferInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetTransferInfo" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetTransferInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetTransferInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AAAEmrGenralStrSoapIn">
+    <wsdl:part name="parameters" element="tns:AAAEmrGenralStr" />
+  </wsdl:message>
+  <wsdl:message name="AAAEmrGenralStrSoapOut">
+    <wsdl:part name="parameters" element="tns:AAAEmrGenralStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGenralStrSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGenralStr" />
+  </wsdl:message>
+  <wsdl:message name="EmrGenralStrSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGenralStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetMonitorCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetMonitorCode" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetMonitorCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetMonitorCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetAutoDisSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetAutoDis" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetAutoDisSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetAutoDisResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSetHisEncodingPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSetHisEncodingPassword" />
+  </wsdl:message>
+  <wsdl:message name="EmrSetHisEncodingPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSetHisEncodingPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHISCostsSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrGetHISCosts" />
+  </wsdl:message>
+  <wsdl:message name="EmrGetHISCostsSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrGetHISCostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrSychroBasicPatInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrSychroBasicPatInfo" />
+  </wsdl:message>
+  <wsdl:message name="EmrSychroBasicPatInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrSychroBasicPatInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrFollowupSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrFollowup" />
+  </wsdl:message>
+  <wsdl:message name="EmrFollowupSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrFollowupResponse" />
+  </wsdl:message>
+  <wsdl:message name="HISGETINFOSoapIn">
+    <wsdl:part name="parameters" element="tns:HISGETINFO" />
+  </wsdl:message>
+  <wsdl:message name="HISGETINFOSoapOut">
+    <wsdl:part name="parameters" element="tns:HISGETINFOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDBDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDBDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetDBDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDBDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcuteDBSqlSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcuteDBSql" />
+  </wsdl:message>
+  <wsdl:message name="ExcuteDBSqlSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcuteDBSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmrJHEMRGetEmrWebViewParaSoapIn">
+    <wsdl:part name="parameters" element="tns:EmrJHEMRGetEmrWebViewPara" />
+  </wsdl:message>
+  <wsdl:message name="EmrJHEMRGetEmrWebViewParaSoapOut">
+    <wsdl:part name="parameters" element="tns:EmrJHEMRGetEmrWebViewParaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOpSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOp" />
+  </wsdl:message>
+  <wsdl:message name="GetOpSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOpResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgetestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgetest" />
+  </wsdl:message>
+  <wsdl:message name="GetAgetestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgetestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgeByBirthdaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgeByBirthday" />
+  </wsdl:message>
+  <wsdl:message name="GetAgeByBirthdaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgeByBirthdayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperatingMrStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperatingMrStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetOperatingMrStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperatingMrStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPATMrStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPATMrStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetPATMrStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPATMrStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperatingMrStatus_newSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperatingMrStatus_new" />
+  </wsdl:message>
+  <wsdl:message name="GetOperatingMrStatus_newSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperatingMrStatus_newResponse" />
+  </wsdl:message>
+  <wsdl:message name="GethuiqiaoshuxueSoapIn">
+    <wsdl:part name="parameters" element="tns:Gethuiqiaoshuxue" />
+  </wsdl:message>
+  <wsdl:message name="GethuiqiaoshuxueSoapOut">
+    <wsdl:part name="parameters" element="tns:GethuiqiaoshuxueResponse" />
+  </wsdl:message>
+  <wsdl:message name="EMROrigFileListSoapIn">
+    <wsdl:part name="parameters" element="tns:EMROrigFileList" />
+  </wsdl:message>
+  <wsdl:message name="EMROrigFileListSoapOut">
+    <wsdl:part name="parameters" element="tns:EMROrigFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ArcRlvAppAuditResultSoapIn">
+    <wsdl:part name="parameters" element="tns:ArcRlvAppAuditResult" />
+  </wsdl:message>
+  <wsdl:message name="ArcRlvAppAuditResultSoapOut">
+    <wsdl:part name="parameters" element="tns:ArcRlvAppAuditResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="C_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:C_Test" />
+  </wsdl:message>
+  <wsdl:message name="C_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:C_TestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EmrServiceSoap">
+    <wsdl:operation name="SF_Test">
+      <wsdl:input message="tns:SF_TestSoapIn" />
+      <wsdl:output message="tns:SF_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ArcCancleUpdateStatus">
+      <wsdl:input message="tns:ArcCancleUpdateStatusSoapIn" />
+      <wsdl:output message="tns:ArcCancleUpdateStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OutpatToInPat">
+      <wsdl:input message="tns:OutpatToInPatSoapIn" />
+      <wsdl:output message="tns:OutpatToInPatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QYYYGETINFO">
+      <wsdl:input message="tns:QYYYGETINFOSoapIn" />
+      <wsdl:output message="tns:QYYYGETINFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInp_No">
+      <wsdl:input message="tns:UpdateInp_NoSoapIn" />
+      <wsdl:output message="tns:UpdateInp_NoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitePatientID">
+      <wsdl:input message="tns:UnitePatientIDSoapIn" />
+      <wsdl:output message="tns:UnitePatientIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitePaitentMrFile">
+      <wsdl:input message="tns:UnitePaitentMrFileSoapIn" />
+      <wsdl:output message="tns:UnitePaitentMrFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisCostNew">
+      <wsdl:input message="tns:EmrGetHisCostNewSoapIn" />
+      <wsdl:output message="tns:EmrGetHisCostNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisCost">
+      <wsdl:input message="tns:EmrGetHisCostSoapIn" />
+      <wsdl:output message="tns:EmrGetHisCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SFGETINFO">
+      <wsdl:input message="tns:SFGETINFOSoapIn" />
+      <wsdl:output message="tns:SFGETINFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetPatientID">
+      <wsdl:input message="tns:EmrGetPatientIDSoapIn" />
+      <wsdl:output message="tns:EmrGetPatientIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToHisOutPatInfoBook">
+      <wsdl:input message="tns:GetToHisOutPatInfoBookSoapIn" />
+      <wsdl:output message="tns:GetToHisOutPatInfoBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Copy">
+      <wsdl:input message="tns:CopySoapIn" />
+      <wsdl:output message="tns:CopySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_fileToLocal">
+      <wsdl:input message="tns:get_fileToLocalSoapIn" />
+      <wsdl:output message="tns:get_fileToLocalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DTGETINFO">
+      <wsdl:input message="tns:DTGETINFOSoapIn" />
+      <wsdl:output message="tns:DTGETINFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetCpInfoDataSet">
+      <wsdl:input message="tns:EmrGetCpInfoDataSetSoapIn" />
+      <wsdl:output message="tns:EmrGetCpInfoDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YYGETINFO">
+      <wsdl:input message="tns:YYGETINFOSoapIn" />
+      <wsdl:output message="tns:YYGETINFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CisGetOutPatientInfo">
+      <wsdl:input message="tns:CisGetOutPatientInfoSoapIn" />
+      <wsdl:output message="tns:CisGetOutPatientInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrOldOrders">
+      <wsdl:input message="tns:EmrOldOrdersSoapIn" />
+      <wsdl:output message="tns:EmrOldOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="genMrPath">
+      <wsdl:input message="tns:genMrPathSoapIn" />
+      <wsdl:output message="tns:genMrPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMrSummary">
+      <wsdl:input message="tns:GetMrSummarySoapIn" />
+      <wsdl:output message="tns:GetMrSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetICUmessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">插入重症数据</wsdl:documentation>
+      <wsdl:input message="tns:GetICUmessageSoapIn" />
+      <wsdl:output message="tns:GetICUmessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrAccountValidate">
+      <wsdl:input message="tns:EmrAccountValidateSoapIn" />
+      <wsdl:output message="tns:EmrAccountValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDict">
+      <wsdl:input message="tns:EmrSynchroDictSoapIn" />
+      <wsdl:output message="tns:EmrSynchroDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroZrys">
+      <wsdl:input message="tns:EmrSynchroZrysSoapIn" />
+      <wsdl:output message="tns:EmrSynchroZrysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroBedDict">
+      <wsdl:input message="tns:EmrSynchroBedDictSoapIn" />
+      <wsdl:output message="tns:EmrSynchroBedDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetNurseBloodBypatient1">
+      <wsdl:input message="tns:EmrGetNurseBloodBypatient1SoapIn" />
+      <wsdl:output message="tns:EmrGetNurseBloodBypatient1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamReportNew">
+      <wsdl:input message="tns:EmrGetExamReportNewSoapIn" />
+      <wsdl:output message="tns:EmrGetExamReportNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetNurseBloodBypatient">
+      <wsdl:input message="tns:EmrGetNurseBloodBypatientSoapIn" />
+      <wsdl:output message="tns:EmrGetNurseBloodBypatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetEvaluateBloodBypatient">
+      <wsdl:input message="tns:EmrGetEvaluateBloodBypatientSoapIn" />
+      <wsdl:output message="tns:EmrGetEvaluateBloodBypatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroUsers">
+      <wsdl:input message="tns:EmrSynchroUsersSoapIn" />
+      <wsdl:output message="tns:EmrSynchroUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOperationCode">
+      <wsdl:input message="tns:EmrSynchroOperationCodeSoapIn" />
+      <wsdl:output message="tns:EmrSynchroOperationCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroICDCode">
+      <wsdl:input message="tns:EmrSynchroICDCodeSoapIn" />
+      <wsdl:output message="tns:EmrSynchroICDCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDeptDict">
+      <wsdl:input message="tns:EmrSynchroDeptDictSoapIn" />
+      <wsdl:output message="tns:EmrSynchroDeptDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatFor">
+      <wsdl:input message="tns:EmrSynchroPatForSoapIn" />
+      <wsdl:output message="tns:EmrSynchroPatForSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptUser">
+      <wsdl:input message="tns:GetDeptUserSoapIn" />
+      <wsdl:output message="tns:GetDeptUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroNewPat">
+      <wsdl:input message="tns:EmrSynchroNewPatSoapIn" />
+      <wsdl:output message="tns:EmrSynchroNewPatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOnePat">
+      <wsdl:input message="tns:EmrSynchroOnePatSoapIn" />
+      <wsdl:output message="tns:EmrSynchroOnePatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOnePatTest">
+      <wsdl:input message="tns:EmrSynchroOnePatTestSoapIn" />
+      <wsdl:output message="tns:EmrSynchroOnePatTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroNewPatMZ">
+      <wsdl:input message="tns:EmrSynchroNewPatMZSoapIn" />
+      <wsdl:output message="tns:EmrSynchroNewPatMZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOutPat">
+      <wsdl:input message="tns:EmrSynchroOutPatSoapIn" />
+      <wsdl:output message="tns:EmrSynchroOutPatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrBackup">
+      <wsdl:input message="tns:EmrBackupSoapIn" />
+      <wsdl:output message="tns:EmrBackupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateErrorTopicid">
+      <wsdl:input message="tns:UpdateErrorTopicidSoapIn" />
+      <wsdl:output message="tns:UpdateErrorTopicidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderTypeDict">
+      <wsdl:input message="tns:EmrGetOrderTypeDictSoapIn" />
+      <wsdl:output message="tns:EmrGetOrderTypeDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderItemDict">
+      <wsdl:input message="tns:EmrGetOrderItemDictSoapIn" />
+      <wsdl:output message="tns:EmrGetOrderItemDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderDataSet">
+      <wsdl:input message="tns:EmrGetOrderDataSetSoapIn" />
+      <wsdl:output message="tns:EmrGetOrderDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatOrder">
+      <wsdl:input message="tns:EmrSynchroPatOrderSoapIn" />
+      <wsdl:output message="tns:EmrSynchroPatOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderDataSetByPatentID">
+      <wsdl:input message="tns:EmrGetOrderDataSetByPatentIDSoapIn" />
+      <wsdl:output message="tns:EmrGetOrderDataSetByPatentIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabDataSetByPatentID">
+      <wsdl:input message="tns:EmrGetLabDataSetByPatentIDSoapIn" />
+      <wsdl:output message="tns:EmrGetLabDataSetByPatentIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabReportDataSet">
+      <wsdl:input message="tns:EmrGetLabReportDataSetSoapIn" />
+      <wsdl:output message="tns:EmrGetLabReportDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabItemResultQuery">
+      <wsdl:input message="tns:EmrGetLabItemResultQuerySoapIn" />
+      <wsdl:output message="tns:EmrGetLabItemResultQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamMaster">
+      <wsdl:input message="tns:EmrGetExamMasterSoapIn" />
+      <wsdl:output message="tns:EmrGetExamMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamAppoint">
+      <wsdl:input message="tns:EmrGetExamAppointSoapIn" />
+      <wsdl:output message="tns:EmrGetExamAppointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroExamAppoint">
+      <wsdl:input message="tns:EmrSynchroExamAppointSoapIn" />
+      <wsdl:output message="tns:EmrSynchroExamAppointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamReport">
+      <wsdl:input message="tns:EmrGetExamReportSoapIn" />
+      <wsdl:output message="tns:EmrGetExamReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDeptPatOrder">
+      <wsdl:input message="tns:EmrSynchroDeptPatOrderSoapIn" />
+      <wsdl:output message="tns:EmrSynchroDeptPatOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroAppGrants">
+      <wsdl:input message="tns:EmrSynchroAppGrantsSoapIn" />
+      <wsdl:output message="tns:EmrSynchroAppGrantsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatMedicalCostById">
+      <wsdl:input message="tns:EmrSynchroPatMedicalCostByIdSoapIn" />
+      <wsdl:output message="tns:EmrSynchroPatMedicalCostByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroLis">
+      <wsdl:input message="tns:EmrSynchroLisSoapIn" />
+      <wsdl:output message="tns:EmrSynchroLisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSychroAdtLog">
+      <wsdl:input message="tns:EmrSychroAdtLogSoapIn" />
+      <wsdl:output message="tns:EmrSychroAdtLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmrReportBedDate">
+      <wsdl:input message="tns:UpdateEmrReportBedDateSoapIn" />
+      <wsdl:output message="tns:UpdateEmrReportBedDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQNRYRS">
+      <wsdl:input message="tns:EmrGetHisQNRYRSSoapIn" />
+      <wsdl:output message="tns:EmrGetHisQNRYRSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQNCYRS">
+      <wsdl:input message="tns:EmrGetHisQNCYRSSoapIn" />
+      <wsdl:output message="tns:EmrGetHisQNCYRSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQWYYRS">
+      <wsdl:input message="tns:EmrGetHisQWYYRSSoapIn" />
+      <wsdl:output message="tns:EmrGetHisQWYYRSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQMSYRS">
+      <wsdl:input message="tns:EmrGetHisQMSYRSSoapIn" />
+      <wsdl:output message="tns:EmrGetHisQMSYRSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetPatDischargeDateTime">
+      <wsdl:input message="tns:EmrGetPatDischargeDateTimeSoapIn" />
+      <wsdl:output message="tns:EmrGetPatDischargeDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmrReportBedDateICU">
+      <wsdl:input message="tns:UpdateEmrReportBedDateICUSoapIn" />
+      <wsdl:output message="tns:UpdateEmrReportBedDateICUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDischargeDateTime">
+      <wsdl:input message="tns:EmrSynchroDischargeDateTimeSoapIn" />
+      <wsdl:output message="tns:EmrSynchroDischargeDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetEncodingPassword">
+      <wsdl:input message="tns:EmrGetEncodingPasswordSoapIn" />
+      <wsdl:output message="tns:EmrGetEncodingPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrToHis">
+      <wsdl:input message="tns:EmrToHisSoapIn" />
+      <wsdl:output message="tns:EmrToHisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XinXiDaoRuHis">
+      <wsdl:input message="tns:XinXiDaoRuHisSoapIn" />
+      <wsdl:output message="tns:XinXiDaoRuHisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetGeneralSQL">
+      <wsdl:input message="tns:EmrGetGeneralSQLSoapIn" />
+      <wsdl:output message="tns:EmrGetGeneralSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Getdataset">
+      <wsdl:input message="tns:GetdatasetSoapIn" />
+      <wsdl:output message="tns:GetdatasetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGenralDataSet">
+      <wsdl:input message="tns:EmrGenralDataSetSoapIn" />
+      <wsdl:output message="tns:EmrGenralDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetTransferInfo">
+      <wsdl:input message="tns:EmrGetTransferInfoSoapIn" />
+      <wsdl:output message="tns:EmrGetTransferInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AAAEmrGenralStr">
+      <wsdl:input message="tns:AAAEmrGenralStrSoapIn" />
+      <wsdl:output message="tns:AAAEmrGenralStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGenralStr">
+      <wsdl:input message="tns:EmrGenralStrSoapIn" />
+      <wsdl:output message="tns:EmrGenralStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetMonitorCode">
+      <wsdl:input message="tns:EmrGetMonitorCodeSoapIn" />
+      <wsdl:output message="tns:EmrGetMonitorCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetAutoDis">
+      <wsdl:input message="tns:EmrGetAutoDisSoapIn" />
+      <wsdl:output message="tns:EmrGetAutoDisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSetHisEncodingPassword">
+      <wsdl:input message="tns:EmrSetHisEncodingPasswordSoapIn" />
+      <wsdl:output message="tns:EmrSetHisEncodingPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHISCosts">
+      <wsdl:input message="tns:EmrGetHISCostsSoapIn" />
+      <wsdl:output message="tns:EmrGetHISCostsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrSychroBasicPatInfo">
+      <wsdl:input message="tns:EmrSychroBasicPatInfoSoapIn" />
+      <wsdl:output message="tns:EmrSychroBasicPatInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrFollowup">
+      <wsdl:input message="tns:EmrFollowupSoapIn" />
+      <wsdl:output message="tns:EmrFollowupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HISGETINFO">
+      <wsdl:input message="tns:HISGETINFOSoapIn" />
+      <wsdl:output message="tns:HISGETINFOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDataSet">
+      <wsdl:input message="tns:GetDBDataSetSoapIn" />
+      <wsdl:output message="tns:GetDBDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcuteDBSql">
+      <wsdl:input message="tns:ExcuteDBSqlSoapIn" />
+      <wsdl:output message="tns:ExcuteDBSqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmrJHEMRGetEmrWebViewPara">
+      <wsdl:input message="tns:EmrJHEMRGetEmrWebViewParaSoapIn" />
+      <wsdl:output message="tns:EmrJHEMRGetEmrWebViewParaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOp">
+      <wsdl:input message="tns:GetOpSoapIn" />
+      <wsdl:output message="tns:GetOpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgetest">
+      <wsdl:input message="tns:GetAgetestSoapIn" />
+      <wsdl:output message="tns:GetAgetestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgeByBirthday">
+      <wsdl:input message="tns:GetAgeByBirthdaySoapIn" />
+      <wsdl:output message="tns:GetAgeByBirthdaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatingMrStatus">
+      <wsdl:input message="tns:GetOperatingMrStatusSoapIn" />
+      <wsdl:output message="tns:GetOperatingMrStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPATMrStatus">
+      <wsdl:input message="tns:GetPATMrStatusSoapIn" />
+      <wsdl:output message="tns:GetPATMrStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatingMrStatus_new">
+      <wsdl:input message="tns:GetOperatingMrStatus_newSoapIn" />
+      <wsdl:output message="tns:GetOperatingMrStatus_newSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Gethuiqiaoshuxue">
+      <wsdl:input message="tns:GethuiqiaoshuxueSoapIn" />
+      <wsdl:output message="tns:GethuiqiaoshuxueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EMROrigFileList">
+      <wsdl:input message="tns:EMROrigFileListSoapIn" />
+      <wsdl:output message="tns:EMROrigFileListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ArcRlvAppAuditResult">
+      <wsdl:input message="tns:ArcRlvAppAuditResultSoapIn" />
+      <wsdl:output message="tns:ArcRlvAppAuditResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="C_Test">
+      <wsdl:input message="tns:C_TestSoapIn" />
+      <wsdl:output message="tns:C_TestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmrServiceSoap" type="tns:EmrServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SF_Test">
+      <soap:operation soapAction="http://tempuri.org/SF_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArcCancleUpdateStatus">
+      <soap:operation soapAction="http://tempuri.org/ArcCancleUpdateStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutpatToInPat">
+      <soap:operation soapAction="http://tempuri.org/OutpatToInPat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QYYYGETINFO">
+      <soap:operation soapAction="http://tempuri.org/QYYYGETINFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInp_No">
+      <soap:operation soapAction="http://tempuri.org/UpdateInp_No" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitePatientID">
+      <soap:operation soapAction="http://tempuri.org/UnitePatientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitePaitentMrFile">
+      <soap:operation soapAction="http://tempuri.org/UnitePaitentMrFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisCostNew">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHisCostNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisCost">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHisCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SFGETINFO">
+      <soap:operation soapAction="http://tempuri.org/SFGETINFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetPatientID">
+      <soap:operation soapAction="http://tempuri.org/EmrGetPatientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToHisOutPatInfoBook">
+      <soap:operation soapAction="http://tempuri.org/GetToHisOutPatInfoBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Copy">
+      <soap:operation soapAction="http://tempuri.org/Copy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_fileToLocal">
+      <soap:operation soapAction="http://tempuri.org/get_fileToLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DTGETINFO">
+      <soap:operation soapAction="http://tempuri.org/DTGETINFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetCpInfoDataSet">
+      <soap:operation soapAction="http://tempuri.org/EmrGetCpInfoDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YYGETINFO">
+      <soap:operation soapAction="http://tempuri.org/YYGETINFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CisGetOutPatientInfo">
+      <soap:operation soapAction="http://tempuri.org/CisGetOutPatientInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrOldOrders">
+      <soap:operation soapAction="http://tempuri.org/EmrOldOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genMrPath">
+      <soap:operation soapAction="http://tempuri.org/genMrPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMrSummary">
+      <soap:operation soapAction="http://tempuri.org/GetMrSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetICUmessage">
+      <soap:operation soapAction="http://tempuri.org/GetICUmessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrAccountValidate">
+      <soap:operation soapAction="http://tempuri.org/EmrAccountValidate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDict">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroZrys">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroZrys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroBedDict">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroBedDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetNurseBloodBypatient1">
+      <soap:operation soapAction="http://tempuri.org/EmrGetNurseBloodBypatient1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamReportNew">
+      <soap:operation soapAction="http://tempuri.org/EmrGetExamReportNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetNurseBloodBypatient">
+      <soap:operation soapAction="http://tempuri.org/EmrGetNurseBloodBypatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetEvaluateBloodBypatient">
+      <soap:operation soapAction="http://tempuri.org/EmrGetEvaluateBloodBypatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroUsers">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOperationCode">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroOperationCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroICDCode">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroICDCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDeptDict">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroDeptDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatFor">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroPatFor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptUser">
+      <soap:operation soapAction="http://tempuri.org/GetDeptUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroNewPat">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroNewPat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOnePat">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroOnePat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOnePatTest">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroOnePatTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroNewPatMZ">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroNewPatMZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOutPat">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroOutPat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrBackup">
+      <soap:operation soapAction="http://tempuri.org/EmrBackup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateErrorTopicid">
+      <soap:operation soapAction="http://tempuri.org/UpdateErrorTopicid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderTypeDict">
+      <soap:operation soapAction="http://tempuri.org/EmrGetOrderTypeDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderItemDict">
+      <soap:operation soapAction="http://tempuri.org/EmrGetOrderItemDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderDataSet">
+      <soap:operation soapAction="http://tempuri.org/EmrGetOrderDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatOrder">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroPatOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderDataSetByPatentID">
+      <soap:operation soapAction="http://tempuri.org/EmrGetOrderDataSetByPatentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabDataSetByPatentID">
+      <soap:operation soapAction="http://tempuri.org/EmrGetLabDataSetByPatentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabReportDataSet">
+      <soap:operation soapAction="http://tempuri.org/EmrGetLabReportDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabItemResultQuery">
+      <soap:operation soapAction="http://tempuri.org/EmrGetLabItemResultQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamMaster">
+      <soap:operation soapAction="http://tempuri.org/EmrGetExamMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamAppoint">
+      <soap:operation soapAction="http://tempuri.org/EmrGetExamAppoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroExamAppoint">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroExamAppoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamReport">
+      <soap:operation soapAction="http://tempuri.org/EmrGetExamReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDeptPatOrder">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroDeptPatOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroAppGrants">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroAppGrants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatMedicalCostById">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroPatMedicalCostById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroLis">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroLis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSychroAdtLog">
+      <soap:operation soapAction="http://tempuri.org/EmrSychroAdtLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmrReportBedDate">
+      <soap:operation soapAction="http://tempuri.org/UpdateEmrReportBedDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQNRYRS">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHisQNRYRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQNCYRS">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHisQNCYRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQWYYRS">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHisQWYYRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQMSYRS">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHisQMSYRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetPatDischargeDateTime">
+      <soap:operation soapAction="http://tempuri.org/EmrGetPatDischargeDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmrReportBedDateICU">
+      <soap:operation soapAction="http://tempuri.org/UpdateEmrReportBedDateICU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDischargeDateTime">
+      <soap:operation soapAction="http://tempuri.org/EmrSynchroDischargeDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetEncodingPassword">
+      <soap:operation soapAction="http://tempuri.org/EmrGetEncodingPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrToHis">
+      <soap:operation soapAction="http://tempuri.org/EmrToHis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XinXiDaoRuHis">
+      <soap:operation soapAction="http://tempuri.org/XinXiDaoRuHis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetGeneralSQL">
+      <soap:operation soapAction="http://tempuri.org/EmrGetGeneralSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getdataset">
+      <soap:operation soapAction="http://tempuri.org/Getdataset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGenralDataSet">
+      <soap:operation soapAction="http://tempuri.org/EmrGenralDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetTransferInfo">
+      <soap:operation soapAction="http://tempuri.org/EmrGetTransferInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AAAEmrGenralStr">
+      <soap:operation soapAction="http://tempuri.org/AAAEmrGenralStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGenralStr">
+      <soap:operation soapAction="http://tempuri.org/EmrGenralStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetMonitorCode">
+      <soap:operation soapAction="http://tempuri.org/EmrGetMonitorCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetAutoDis">
+      <soap:operation soapAction="http://tempuri.org/EmrGetAutoDis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSetHisEncodingPassword">
+      <soap:operation soapAction="http://tempuri.org/EmrSetHisEncodingPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHISCosts">
+      <soap:operation soapAction="http://tempuri.org/EmrGetHISCosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSychroBasicPatInfo">
+      <soap:operation soapAction="http://tempuri.org/EmrSychroBasicPatInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrFollowup">
+      <soap:operation soapAction="http://tempuri.org/EmrFollowup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HISGETINFO">
+      <soap:operation soapAction="http://tempuri.org/HISGETINFO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDataSet">
+      <soap:operation soapAction="http://tempuri.org/GetDBDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcuteDBSql">
+      <soap:operation soapAction="http://tempuri.org/ExcuteDBSql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrJHEMRGetEmrWebViewPara">
+      <soap:operation soapAction="http://tempuri.org/EmrJHEMRGetEmrWebViewPara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOp">
+      <soap:operation soapAction="http://tempuri.org/GetOp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgetest">
+      <soap:operation soapAction="http://tempuri.org/GetAgetest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgeByBirthday">
+      <soap:operation soapAction="http://tempuri.org/GetAgeByBirthday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatingMrStatus">
+      <soap:operation soapAction="http://tempuri.org/GetOperatingMrStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPATMrStatus">
+      <soap:operation soapAction="http://tempuri.org/GetPATMrStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatingMrStatus_new">
+      <soap:operation soapAction="http://tempuri.org/GetOperatingMrStatus_new" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gethuiqiaoshuxue">
+      <soap:operation soapAction="http://tempuri.org/Gethuiqiaoshuxue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EMROrigFileList">
+      <soap:operation soapAction="http://tempuri.org/EMROrigFileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArcRlvAppAuditResult">
+      <soap:operation soapAction="http://tempuri.org/ArcRlvAppAuditResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="C_Test">
+      <soap:operation soapAction="http://tempuri.org/C_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmrServiceSoap12" type="tns:EmrServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SF_Test">
+      <soap12:operation soapAction="http://tempuri.org/SF_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArcCancleUpdateStatus">
+      <soap12:operation soapAction="http://tempuri.org/ArcCancleUpdateStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutpatToInPat">
+      <soap12:operation soapAction="http://tempuri.org/OutpatToInPat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QYYYGETINFO">
+      <soap12:operation soapAction="http://tempuri.org/QYYYGETINFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInp_No">
+      <soap12:operation soapAction="http://tempuri.org/UpdateInp_No" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitePatientID">
+      <soap12:operation soapAction="http://tempuri.org/UnitePatientID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitePaitentMrFile">
+      <soap12:operation soapAction="http://tempuri.org/UnitePaitentMrFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisCostNew">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHisCostNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisCost">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHisCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SFGETINFO">
+      <soap12:operation soapAction="http://tempuri.org/SFGETINFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetPatientID">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetPatientID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToHisOutPatInfoBook">
+      <soap12:operation soapAction="http://tempuri.org/GetToHisOutPatInfoBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Copy">
+      <soap12:operation soapAction="http://tempuri.org/Copy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_fileToLocal">
+      <soap12:operation soapAction="http://tempuri.org/get_fileToLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DTGETINFO">
+      <soap12:operation soapAction="http://tempuri.org/DTGETINFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetCpInfoDataSet">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetCpInfoDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YYGETINFO">
+      <soap12:operation soapAction="http://tempuri.org/YYGETINFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CisGetOutPatientInfo">
+      <soap12:operation soapAction="http://tempuri.org/CisGetOutPatientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrOldOrders">
+      <soap12:operation soapAction="http://tempuri.org/EmrOldOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genMrPath">
+      <soap12:operation soapAction="http://tempuri.org/genMrPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMrSummary">
+      <soap12:operation soapAction="http://tempuri.org/GetMrSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetICUmessage">
+      <soap12:operation soapAction="http://tempuri.org/GetICUmessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrAccountValidate">
+      <soap12:operation soapAction="http://tempuri.org/EmrAccountValidate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDict">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroZrys">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroZrys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroBedDict">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroBedDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetNurseBloodBypatient1">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetNurseBloodBypatient1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamReportNew">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetExamReportNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetNurseBloodBypatient">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetNurseBloodBypatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetEvaluateBloodBypatient">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetEvaluateBloodBypatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroUsers">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOperationCode">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroOperationCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroICDCode">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroICDCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDeptDict">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroDeptDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatFor">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroPatFor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptUser">
+      <soap12:operation soapAction="http://tempuri.org/GetDeptUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroNewPat">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroNewPat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOnePat">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroOnePat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOnePatTest">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroOnePatTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroNewPatMZ">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroNewPatMZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroOutPat">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroOutPat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrBackup">
+      <soap12:operation soapAction="http://tempuri.org/EmrBackup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateErrorTopicid">
+      <soap12:operation soapAction="http://tempuri.org/UpdateErrorTopicid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderTypeDict">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetOrderTypeDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderItemDict">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetOrderItemDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderDataSet">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetOrderDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatOrder">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroPatOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetOrderDataSetByPatentID">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetOrderDataSetByPatentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabDataSetByPatentID">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetLabDataSetByPatentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabReportDataSet">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetLabReportDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetLabItemResultQuery">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetLabItemResultQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamMaster">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetExamMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamAppoint">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetExamAppoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroExamAppoint">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroExamAppoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetExamReport">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetExamReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDeptPatOrder">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroDeptPatOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroAppGrants">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroAppGrants" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroPatMedicalCostById">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroPatMedicalCostById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroLis">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroLis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSychroAdtLog">
+      <soap12:operation soapAction="http://tempuri.org/EmrSychroAdtLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmrReportBedDate">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEmrReportBedDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQNRYRS">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHisQNRYRS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQNCYRS">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHisQNCYRS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQWYYRS">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHisQWYYRS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHisQMSYRS">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHisQMSYRS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetPatDischargeDateTime">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetPatDischargeDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmrReportBedDateICU">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEmrReportBedDateICU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSynchroDischargeDateTime">
+      <soap12:operation soapAction="http://tempuri.org/EmrSynchroDischargeDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetEncodingPassword">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetEncodingPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrToHis">
+      <soap12:operation soapAction="http://tempuri.org/EmrToHis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XinXiDaoRuHis">
+      <soap12:operation soapAction="http://tempuri.org/XinXiDaoRuHis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetGeneralSQL">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetGeneralSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getdataset">
+      <soap12:operation soapAction="http://tempuri.org/Getdataset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGenralDataSet">
+      <soap12:operation soapAction="http://tempuri.org/EmrGenralDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetTransferInfo">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetTransferInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AAAEmrGenralStr">
+      <soap12:operation soapAction="http://tempuri.org/AAAEmrGenralStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGenralStr">
+      <soap12:operation soapAction="http://tempuri.org/EmrGenralStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetMonitorCode">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetMonitorCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetAutoDis">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetAutoDis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSetHisEncodingPassword">
+      <soap12:operation soapAction="http://tempuri.org/EmrSetHisEncodingPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrGetHISCosts">
+      <soap12:operation soapAction="http://tempuri.org/EmrGetHISCosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrSychroBasicPatInfo">
+      <soap12:operation soapAction="http://tempuri.org/EmrSychroBasicPatInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrFollowup">
+      <soap12:operation soapAction="http://tempuri.org/EmrFollowup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HISGETINFO">
+      <soap12:operation soapAction="http://tempuri.org/HISGETINFO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBDataSet">
+      <soap12:operation soapAction="http://tempuri.org/GetDBDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcuteDBSql">
+      <soap12:operation soapAction="http://tempuri.org/ExcuteDBSql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmrJHEMRGetEmrWebViewPara">
+      <soap12:operation soapAction="http://tempuri.org/EmrJHEMRGetEmrWebViewPara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOp">
+      <soap12:operation soapAction="http://tempuri.org/GetOp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgetest">
+      <soap12:operation soapAction="http://tempuri.org/GetAgetest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgeByBirthday">
+      <soap12:operation soapAction="http://tempuri.org/GetAgeByBirthday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatingMrStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetOperatingMrStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPATMrStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetPATMrStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperatingMrStatus_new">
+      <soap12:operation soapAction="http://tempuri.org/GetOperatingMrStatus_new" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Gethuiqiaoshuxue">
+      <soap12:operation soapAction="http://tempuri.org/Gethuiqiaoshuxue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EMROrigFileList">
+      <soap12:operation soapAction="http://tempuri.org/EMROrigFileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArcRlvAppAuditResult">
+      <soap12:operation soapAction="http://tempuri.org/ArcRlvAppAuditResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="C_Test">
+      <soap12:operation soapAction="http://tempuri.org/C_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmrService">
+    <wsdl:port name="EmrServiceSoap" binding="tns:EmrServiceSoap">
+      <soap:address location="http://192.168.192.75:81/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmrServiceSoap12" binding="tns:EmrServiceSoap12">
+      <soap12:address location="http://192.168.192.75:81/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

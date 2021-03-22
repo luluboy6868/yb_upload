@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,7 +24,7 @@ namespace MediRegist
         public static int Login_n = 0;  //用户登录与重新登录的标识
         public static string AllSql = "Select * from tb_Stuffbusic";    //存储职工基本信息表中的SQL语句
                                                                         //public static int res = 0;
-
+        public static string gv_cfbh = ""; //处方上传的处方编号
 
 
         #endregion
@@ -129,6 +130,7 @@ namespace MediRegist
             getcon();   //打开与数据库的连接
             SqlCommand My_com = My_con.CreateCommand(); //创建一个SqlCommand对象，用于执行SQL语句
             My_com.CommandText = SQLstr;    //获取指定的SQL语句
+            My_com.CommandTimeout = 0;
             SqlDataReader My_read = My_com.ExecuteReader(); //执行SQL语名句，生成一个SqlDataReader对象
             return My_read;
         }
@@ -220,6 +222,79 @@ namespace MediRegist
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public DataTable GetDgvToTable(DataGridView dgv, int m, int n)
+        {
+            DataTable dt = new DataTable();
+
+            // 列强制转换
+            for (int count = m; count < n + m; count++)
+            {
+                DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                dt.Columns.Add(dc);
+            }
+
+            // 循环行
+            for (int count = 0; count < dgv.Rows.Count; count++)
+            {
+                //if (Convert.ToBoolean(dgv.Rows[count].Cells["colu_sele"].Value))
+                //{
+                DataRow dr = dt.NewRow();
+                for (int countsub = m; countsub < n + m; countsub++)
+                {
+                    dr[countsub - m] = Convert.ToString(dgv.Rows[count].Cells[countsub].Value);
+                }
+                dt.Rows.Add(dr);
+                //}
+            }
+            return dt;
+        }
+
+        //获取某行json
+        public string GetRowJson(DataGridView dgv, int m, int n,int Row)
+        {
+            DataTable dt = new DataTable();
+
+            // 列强制转换
+            for (int count = m; count < n + m; count++)
+            {
+                DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                dt.Columns.Add(dc);
+            }
+
+            //添加列
+            DataRow dr = dt.NewRow();
+            for (int countsub = m; countsub < n + m; countsub++)
+            {
+                dr[countsub - m] = Convert.ToString(dgv.Rows[Row].Cells[countsub].Value);
+            }
+            dt.Rows.Add(dr);
+
+            return JsonConvert.SerializeObject(dt).Replace("[","").Replace("]","");
+        }
+
+        public string getweb_new(string sbjgbh, string zcm, string str_hisjyh, string str_method, string str_jsonPara, string yybm)
+        {
+            LogClass Log = new LogClass();
+            string ss = "";
+            try
+            {
+                Log.WriteLogFile("webservice begin（社保机构编号：" + sbjgbh + "  注册码：" + zcm + "  医院编码：" + yybm + ")");
+                Log.WriteLogFile("his交易号：" + str_hisjyh + "方法：" + str_method + "入参：" + str_jsonPara);
+                WebReference1.Mhs5service wr = new WebReference1.Mhs5service();
+                wr.Timeout = 300000;
+                ss = wr.pipInvoke(sbjgbh, zcm, str_hisjyh, str_method, str_jsonPara, yybm);
+                Log.WriteLogFile("出参：" + ss);
+                Log.WriteLogFile("webservice end");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("接口调用失败," + ex);
+                Log.WriteLogFile("接口调用失败," + ex);
+                return "";
+            }
+            return ss;
         }
     }
 }

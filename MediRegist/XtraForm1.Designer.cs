@@ -103,11 +103,11 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(117, 62);
+            this.labelControl3.Location = new System.Drawing.Point(152, 67);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(216, 33);
+            this.labelControl3.Size = new System.Drawing.Size(173, 33);
             this.labelControl3.TabIndex = 6;
-            this.labelControl3.Text = "医保上传管理系统";
+            this.labelControl3.Text = "DRGs管理系统";
             // 
             // labelControl4
             // 
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 353);
+            this.ClientSize = new System.Drawing.Size(498, 359);
             this.ControlBox = false;
             this.Controls.Add(this.com_sysid);
             this.Controls.Add(this.labelControl4);

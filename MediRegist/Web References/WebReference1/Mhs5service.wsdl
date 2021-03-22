@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://Mhs5service.dareway.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:axis2="http://service.communication.service.dareway.com" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://service.communication.service.dareway.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Mhs5service</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://Mhs5service.dareway.com">
+      <xs:element name="pipInvoke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args4" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args5" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pipInvokeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="loginByYybm">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="loginByYybmResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="login">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="loginResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeSi">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args4" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeSiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeCotton">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args4" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args5" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeCottonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invoke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args4" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dipInvoke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dipInvokeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="loginByYybmRequest">
+    <wsdl:part name="parameters" element="ns:loginByYybm" />
+  </wsdl:message>
+  <wsdl:message name="loginByYybmResponse">
+    <wsdl:part name="parameters" element="ns:loginByYybmResponse" />
+  </wsdl:message>
+  <wsdl:message name="invokeCottonRequest">
+    <wsdl:part name="parameters" element="ns:invokeCotton" />
+  </wsdl:message>
+  <wsdl:message name="invokeCottonResponse">
+    <wsdl:part name="parameters" element="ns:invokeCottonResponse" />
+  </wsdl:message>
+  <wsdl:message name="dipInvokeRequest">
+    <wsdl:part name="parameters" element="ns:dipInvoke" />
+  </wsdl:message>
+  <wsdl:message name="dipInvokeResponse">
+    <wsdl:part name="parameters" element="ns:dipInvokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="pipInvokeRequest">
+    <wsdl:part name="parameters" element="ns:pipInvoke" />
+  </wsdl:message>
+  <wsdl:message name="pipInvokeResponse">
+    <wsdl:part name="parameters" element="ns:pipInvokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="invokeRequest">
+    <wsdl:part name="parameters" element="ns:invoke" />
+  </wsdl:message>
+  <wsdl:message name="invokeResponse">
+    <wsdl:part name="parameters" element="ns:invokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="parameters" element="ns:login" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="parameters" element="ns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="invokeSiRequest">
+    <wsdl:part name="parameters" element="ns:invokeSi" />
+  </wsdl:message>
+  <wsdl:message name="invokeSiResponse">
+    <wsdl:part name="parameters" element="ns:invokeSiResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Mhs5servicePortType">
+    <wsdl:operation name="loginByYybm">
+      <wsdl:input wsaw:Action="urn:loginByYybm" message="axis2:loginByYybmRequest" />
+      <wsdl:output wsaw:Action="urn:loginByYybmResponse" message="axis2:loginByYybmResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="invokeCotton">
+      <wsdl:input wsaw:Action="urn:invokeCotton" message="axis2:invokeCottonRequest" />
+      <wsdl:output wsaw:Action="urn:invokeCottonResponse" message="axis2:invokeCottonResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="dipInvoke">
+      <wsdl:input wsaw:Action="urn:dipInvoke" message="axis2:dipInvokeRequest" />
+      <wsdl:output wsaw:Action="urn:dipInvokeResponse" message="axis2:dipInvokeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pipInvoke">
+      <wsdl:input wsaw:Action="urn:pipInvoke" message="axis2:pipInvokeRequest" />
+      <wsdl:output wsaw:Action="urn:pipInvokeResponse" message="axis2:pipInvokeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="invoke">
+      <wsdl:input wsaw:Action="urn:invoke" message="axis2:invokeRequest" />
+      <wsdl:output wsaw:Action="urn:invokeResponse" message="axis2:invokeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="urn:login" message="axis2:loginRequest" />
+      <wsdl:output wsaw:Action="urn:loginResponse" message="axis2:loginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="invokeSi">
+      <wsdl:input wsaw:Action="urn:invokeSi" message="axis2:invokeSiRequest" />
+      <wsdl:output wsaw:Action="urn:invokeSiResponse" message="axis2:invokeSiResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Mhs5serviceSoap11Binding" type="axis2:Mhs5servicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loginByYybm">
+      <soap:operation soapAction="urn:loginByYybm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeCotton">
+      <soap:operation soapAction="urn:invokeCotton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pipInvoke">
+      <soap:operation soapAction="urn:pipInvoke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dipInvoke">
+      <soap:operation soapAction="urn:dipInvoke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invoke">
+      <soap:operation soapAction="urn:invoke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="urn:login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeSi">
+      <soap:operation soapAction="urn:invokeSi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Mhs5serviceSoap12Binding" type="axis2:Mhs5servicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loginByYybm">
+      <soap12:operation soapAction="urn:loginByYybm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeCotton">
+      <soap12:operation soapAction="urn:invokeCotton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pipInvoke">
+      <soap12:operation soapAction="urn:pipInvoke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dipInvoke">
+      <soap12:operation soapAction="urn:dipInvoke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invoke">
+      <soap12:operation soapAction="urn:invoke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="urn:login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeSi">
+      <soap12:operation soapAction="urn:invokeSi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Mhs5serviceHttpBinding" type="axis2:Mhs5servicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="loginByYybm">
+      <http:operation location="Mhs5service/loginByYybm" />
+      <wsdl:input>
+        <mime:content part="loginByYybm" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="loginByYybm" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeCotton">
+      <http:operation location="Mhs5service/invokeCotton" />
+      <wsdl:input>
+        <mime:content part="invokeCotton" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="invokeCotton" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pipInvoke">
+      <http:operation location="Mhs5service/pipInvoke" />
+      <wsdl:input>
+        <mime:content part="pipInvoke" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="pipInvoke" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dipInvoke">
+      <http:operation location="Mhs5service/dipInvoke" />
+      <wsdl:input>
+        <mime:content part="dipInvoke" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="dipInvoke" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invoke">
+      <http:operation location="Mhs5service/invoke" />
+      <wsdl:input>
+        <mime:content part="invoke" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="invoke" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <http:operation location="Mhs5service/login" />
+      <wsdl:input>
+        <mime:content part="login" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="login" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeSi">
+      <http:operation location="Mhs5service/invokeSi" />
+      <wsdl:input>
+        <mime:content part="invokeSi" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="invokeSi" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Mhs5service">
+    <wsdl:port name="Mhs5serviceHttpSoap11Endpoint" binding="axis2:Mhs5serviceSoap11Binding">
+      <soap:address location="http://10.79.2.40:9001/mhs5/services/Mhs5service.Mhs5serviceHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="Mhs5serviceHttpSoap12Endpoint" binding="axis2:Mhs5serviceSoap12Binding">
+      <soap12:address location="http://10.79.2.40:9001/mhs5/services/Mhs5service.Mhs5serviceHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="Mhs5serviceHttpEndpoint" binding="axis2:Mhs5serviceHttpBinding">
+      <http:address location="http://10.79.2.40:9001/mhs5/services/Mhs5service.Mhs5serviceHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

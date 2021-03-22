@@ -69,8 +69,8 @@ namespace MediRegist
 
                 /**/
                 ///写入日志内容并换行
-                w.Write(input + "\n\r");
-                w.Write("\n\r");
+                w.Write(input + Environment.NewLine);
+                //w.Write("\n\r");
 
                 /**/
                 ///写入------------------------------------“并换行

@@ -178,7 +178,6 @@ namespace MediRegist
                         {
                             MessageBox.Show("用户名或密码错误！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
                         pulicClass.con_close();
                     }
                     else
@@ -223,7 +222,8 @@ namespace MediRegist
                         PulicClass.My_con.Close();
                         PulicClass.My_con.Dispose();
                         this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        //this.Close();
+                        this.Dispose(true);
                     }
                     else
                     {
